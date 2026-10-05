@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi scrapbook</title>
+<link rel="icon" href="img/star.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Chewy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="bienvenida" class="modal" hidden>
+  <div class="hoja">
+    <div id="pide">
+      <h2>¡Hola, bienvenid@!</h2>
+      <p>¿Cómo te llamas o cómo te dicen?</p>
+      <form id="nomForm"><input id="nombre" maxlength="14" placeholder="Tu nombre o apodo" aria-label="Nombre" required><button>Entrar</button></form>
+    </div>
+    <div id="hola" class="hola mg" hidden></div>
+  </div>
+</div>
+<header><img class="st" src="img/camara.png" alt="" loading="lazy" onerror="this.remove()" style="--x:5%;--y:18%;--w:clamp(90px,14vw,200px);--r:-8deg"><img class="st" src="img/estrella.png" alt="" loading="lazy" onerror="this.remove()" style="--x:80%;--y:2%;--w:clamp(70px,10vw,140px);--r:12deg"><img class="st" src="img/flor.png" alt="" loading="lazy" onerror="this.remove()" style="--x:17%;--y:-8%;--w:clamp(70px,9vw,130px);--r:-6deg"><img class="st" src="img/mariposa.png" alt="" loading="lazy" onerror="this.remove()" style="--x:72%;--y:52%;--w:clamp(45px,6vw,90px);--r:14deg">
+  <h1 class="mg" data-mag>my little scrapbook</h1>
+  <p id="nombreGrande" class="nombre mg" aria-live="polite"></p>
+  <button id="cambiarNombre" class="link">✎ cambiar nombre</button>
+  <p>Un rincón para amontonar tus gustos. Lo que escribas se guarda en tu navegador.</p>
+</header>
+<main>
+  <section class="card yellow big" id="vinilo"><img class="st" src="img/mariposa.png" alt="" loading="lazy" onerror="this.remove()" style="--x:1%;--y:4%;--w:clamp(50px,7vw,100px);--r:-12deg"><img class="st" src="img/estrella2.png" alt="" loading="lazy" onerror="this.remove()" style="--x:89%;--y:2%;--w:clamp(60px,8vw,110px);--r:15deg"><img class="st" src="img/ojos.png" alt="" loading="lazy" onerror="this.remove()" style="--x:91%;--y:38%;--w:clamp(45px,6vw,90px);--r:8deg"><img class="st" src="img/corazon.png" alt="" loading="lazy" onerror="this.remove()" style="--x:1%;--y:44%;--w:clamp(50px,7vw,100px);--r:-8deg"><img class="st" src="img/signoexclamacion.png" alt="" loading="lazy" onerror="this.remove()" style="--x:87%;--y:84%;--w:clamp(40px,5vw,70px);--r:10deg">
+    <span class="tape t1"></span><span class="tape t2"></span>
+    <h2 class="mg" data-mag>Favorite Artists</h2>
+    <div class="stage">
+      <span class="deco d1">✦</span><span class="deco d2">🦋</span><span class="deco d3">★</span><span class="deco d4">🎀</span>
+      <div class="vinyl"><div class="label">top 5</div></div>
+    </div>
+    <ol class="panel" id="topList"></ol>
+    <p class="note">toca cada cuadro para poner tu foto ♡</p>
+    <button id="exportar" class="exp">📸 Guardar para historia de Instagram</button>
+  </section>
+
+  <section class="card paper" id="pelis"><img class="st" src="img/cerebro.png" alt="" loading="lazy" onerror="this.remove()" style="--x:-5%;--y:-6%;--w:clamp(70px,9vw,120px);--r:-10deg"><img class="st" src="img/gato3.png" alt="" loading="lazy" onerror="this.remove()" style="--x:80%;--y:-7%;--w:clamp(70px,9vw,120px);--r:8deg"><img class="st" src="img/pez.png" alt="" loading="lazy" onerror="this.remove()" style="--x:-8%;--y:72%;--w:clamp(80px,10vw,140px);--r:-15deg"><img class="st" src="img/signoexclamacion.png" alt="" loading="lazy" onerror="this.remove()" style="--x:86%;--y:86%;--w:clamp(35px,4vw,60px);--r:10deg">
+    <h2>Top movies of <span id="mes"></span></h2>
+    <p class="sub">Las que viste este mes, de cine o de casa.</p>
+    <ol id="movieList"></ol>
+    <form id="movieForm"><input id="movieInput" placeholder="Película que viste este mes" maxlength="50" aria-label="Película"><button>Agregar</button></form>
+  </section>
+
+  <section class="card kraft" id="libro"><img class="st" src="img/flor.png" alt="" loading="lazy" onerror="this.remove()" style="--x:-7%;--y:-5%;--w:clamp(70px,9vw,130px);--r:-8deg"><img class="st" src="img/astronauta.png" alt="" loading="lazy" onerror="this.remove()" style="--x:82%;--y:76%;--w:clamp(80px,10vw,150px);--r:10deg"><img class="st" src="img/estrella.png" alt="" loading="lazy" onerror="this.remove()" style="--x:85%;--y:-6%;--w:clamp(50px,6vw,90px);--r:14deg">
+    <h2>Photo album</h2>
+    <div class="book"><div class="page" id="pageL"></div><div class="page" id="pageR"></div></div>
+    <div class="nav"><button id="prev" aria-label="Página anterior">←</button><span id="pageNum"></span><button id="next" aria-label="Página siguiente">→</button></div>
+  </section>
+
+  <section class="card pink" id="sobre"><img class="st" src="img/sobre.png" alt="" loading="lazy" onerror="this.remove()" style="--x:-6%;--y:58%;--w:clamp(70px,9vw,130px);--r:-10deg"><img class="st" src="img/bicho.png" alt="" loading="lazy" onerror="this.remove()" style="--x:84%;--y:-5%;--w:clamp(50px,7vw,95px);--r:12deg"><img class="st" src="img/estrella2.png" alt="" loading="lazy" onerror="this.remove()" style="--x:85%;--y:80%;--w:clamp(50px,6vw,90px);--r:-10deg">
+    <h2>Letters for friends</h2>
+    <div class="envelope" id="envelope">
+      <div class="letter"><input id="to" placeholder="Para (nombre):" maxlength="30" aria-label="Para"><input id="mail" type="email" placeholder="Correo de tu amiga" aria-label="Correo"><textarea id="msg" placeholder="Escribe tu carta..." aria-label="Carta"></textarea></div>
+      <div class="front"></div><div class="flap"></div><img class="st" src="img/mono.png" alt="" loading="lazy" onerror="this.remove()" style="translate:-50% -50%;z-index:5;--x:50%;--y:50%;--w:90px;--r:0deg">
+    </div>
+    <p class="hint">Toca el sobre para abrirlo o cerrarlo.</p>
+    <div class="acciones"><button id="gmail">Enviar por Gmail</button><button id="mailto">Enviar con mi correo</button></div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
